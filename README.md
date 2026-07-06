@@ -99,36 +99,6 @@ The system provides a family background section and a direct external link to an
 
 The dashboard displays family background information, images, and navigation options based on the user role.
 
-## Project Structure
-
-```text
-myfamilyhub/
-├── app/
-│   ├── Http/
-│   ├── Models/
-│   └── Providers/
-├── bootstrap/
-├── config/
-├── database/
-│   ├── migrations/
-│   ├── seeders/
-│   └── factories/
-├── public/
-├── resources/
-│   ├── css/
-│   ├── js/
-│   └── views/
-├── routes/
-│   └── web.php
-├── storage/
-├── tests/
-├── .env.example
-├── .gitignore
-├── composer.json
-├── package.json
-└── README.md
-```
-
 ## Installation Guide
 
 Follow these steps to run the project locally.
