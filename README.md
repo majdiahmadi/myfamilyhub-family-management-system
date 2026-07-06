@@ -104,8 +104,8 @@ Follow these steps to run the project locally.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/majdiahmadi/myfamilyhub.git
-cd myfamilyhub
+git clone https://github.com/majdiahmadi/myfamilyhub-family-management-system.git
+cd myfamilyhub-family-management-system
 ```
 
 ### 2. Install PHP Dependencies
