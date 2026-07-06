@@ -40,5 +40,5 @@ The system was developed for the Tawakkal family as a centralized digital platfo
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/myfamilyhub.git
+git clone https://github.com/majdiahamdi/myfamilyhub.git
 cd myfamilyhub
