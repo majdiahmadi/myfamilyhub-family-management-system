@@ -136,11 +136,9 @@ Follow these steps to run the project locally.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/myfamilyhub.git
+git clone https://github.com/majdiahmadi/myfamilyhub.git
 cd myfamilyhub
 ```
-
-Replace `YOUR_USERNAME` with your GitHub username.
 
 ### 2. Install PHP Dependencies
 
