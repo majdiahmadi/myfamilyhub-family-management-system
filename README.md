@@ -2,8 +2,6 @@
 
 MyFamilyHub is a web-based family management system developed using Laravel. The system is designed to help a family preserve family history, manage family member records, organize family events, and provide controlled access based on user roles.
 
-This project was developed as part of the BICS 2306 Software Engineering course.
-
 ## Project Overview
 
 Many families still depend on handwritten notes, scattered files, social media groups, or the memory of older family members to preserve family history. This can cause important family information to become lost, outdated, or difficult to access.
