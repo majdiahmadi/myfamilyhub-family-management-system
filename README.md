@@ -8,6 +8,18 @@ Many families still depend on handwritten notes, scattered files, social media g
 
 MyFamilyHub solves this problem by providing a centralized web-based platform where family members can view family information, access event details, and explore family heritage. Administrative users can manage family member records and events through a secure role-based system.
 
+## Usage Note
+
+This repository is shared as a public example of a Software Engineering project built using Laravel.
+
+Laravel was used because it is free, widely supported, and follows the MVC architecture, making it suitable for academic software engineering projects that involve requirements analysis, system design, implementation, testing, and database-driven web development.
+
+The current code is based on a family management system developed for a specific large family client. Because of that, the design, content, database records, user roles, and features were created according to that client’s requirements.
+
+This project should be treated as a reference template or starting point, not a final product for every family. The final system should be customized based on the needs, design preferences, data structure, and requirements of each client or family.
+
+This repository may also help beginners understand how a Laravel web application is organized, especially for authentication, role-based access control, dashboards, database management, and basic CRUD features.
+
 ## Main Features
 
 - Multi-role login system
