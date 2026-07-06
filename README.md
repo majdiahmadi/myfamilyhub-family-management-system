@@ -253,43 +253,6 @@ Password: password
 
 If these accounts do not work, create users manually through the database or update the database seeder.
 
-## Screenshots
-
-Create a `screenshots` folder and add your project screenshots there.
-
-Example:
-
-```text
-screenshots/
-├── login-page.png
-├── dashboard.png
-├── family-member-management.png
-├── event-page.png
-└── family-tree-link.png
-```
-
-Then update the image paths below.
-
-### Login Page
-
-![Login Page](screenshots/login-page.png)
-
-### Dashboard
-
-![Dashboard](screenshots/dashboard.png)
-
-### Family Member Management
-
-![Family Member Management](screenshots/family-member-management.png)
-
-### Event Page
-
-![Event Page](screenshots/event-page.png)
-
-### Family Tree Link Page
-
-![Family Tree Link Page](screenshots/family-tree-link.png)
-
 ## Security Features
 
 The system includes several basic security features:
@@ -369,6 +332,3 @@ Current limitations of the system:
 - The system depends on MySQL availability
 - The system is designed for a limited family user scale, not large public use
 
-## License
-
-This project is for academic and learning purposes.
