@@ -87,8 +87,6 @@ This project was built using:
 - Composer
 - Git and GitHub
 
-## System Modules
-
 ### 1. Access Control
 
 The system requires users to log in using an email and password. Access is controlled based on the user role. Admin users can access management features, while normal family members are limited to view-only pages.
@@ -277,7 +275,92 @@ Nothing to migrate.
 
 it means Laravel did not find any new migration to run.
 
-## 10. Run the Laravel Server
+## 10. Create a Login User in phpMyAdmin
+
+Before logging in to the system, at least one user account must exist in the database.
+
+After creating the `myfamilyhub` database and running migration, open phpMyAdmin from XAMPP:
+
+1. Open **XAMPP Control Panel**.
+2. Make sure **Apache** and **MySQL** are running.
+3. On the MySQL row, click the **Admin** button.
+4. phpMyAdmin will open in the browser.
+5. Select the database:
+
+```text
+myfamilyhub
+```
+
+6. Open the `users` table.
+7. Click **Insert**.
+8. Add a new user record.
+
+The `role` value controls the user type:
+
+```text
+0 = Family Member
+1 = System Admin
+2 = Family Admin
+```
+
+Example user data:
+
+```text
+name: Demo Admin
+email: admin@example.com
+password: password
+role: 2
+```
+
+Important: Laravel usually stores passwords as hashed values. If the login does not work with a plain password, create the user using Laravel Tinker instead.
+
+Run this in the terminal:
+
+```bash
+php artisan tinker
+```
+
+Then paste:
+
+```php
+\App\Models\User::create([
+    'name' => 'Demo Admin',
+    'email' => 'admin@example.com',
+    'password' => bcrypt('password'),
+    'role' => 2,
+]);
+```
+
+Then exit Tinker:
+
+```php
+exit
+```
+
+Now login using:
+
+```text
+Email: admin@example.com
+Password: password
+Role: Family Admin
+```
+
+To create other user types, change the role value:
+
+```php
+// Family Member
+'role' => 0
+
+// System Admin
+'role' => 1
+
+// Family Admin
+'role' => 2
+```
+
+Only after a user account exists in the `users` table can the user log in to the MyFamilyHub system.
+
+## 11. Run the Laravel Server
 
 In the first terminal, run:
 
@@ -293,7 +376,7 @@ Server running on http://127.0.0.1:8000
 
 Do not close this terminal.
 
-## 11. Run the Vite Development Server
+## 12. Run the Vite Development Server
 
 Open a new terminal.
 
@@ -318,7 +401,7 @@ Terminal 1: php artisan serve
 Terminal 2: npm run dev
 ```
 
-## 12. Open the Website
+## 13. Open the Website
 
 Open your browser and go to:
 
@@ -388,26 +471,6 @@ Then open:
 ```text
 http://127.0.0.1:8001
 ```
-
-## Demo Login Accounts
-
-Use the demo accounts below only if they are already created in your database seeder.
-
-```text
-System Admin
-Email: systemadmin@example.com
-Password: password
-
-Family Admin
-Email: familyadmin@example.com
-Password: password
-
-Family Member
-Email: member@example.com
-Password: password
-```
-
-If these accounts do not work, create users manually through the database or update the database seeder.
 
 ## Security Features
 
