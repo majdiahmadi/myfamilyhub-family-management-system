@@ -109,58 +109,138 @@ The system provides a family background section and a direct external link to an
 
 The dashboard displays family background information, images, and navigation options based on the user role.
 
-## Installation Guide
+## Installation and Setup Guide
 
-Follow these steps to run the project locally.
+This section explains how to run the project locally using XAMPP, MySQL, Laravel, and Vite.
 
-### 1. Clone the Repository
+## Requirements
 
-```bash
-git clone https://github.com/majdiahmadi/myfamilyhub-family-management-system.git
-cd myfamilyhub-family-management-system
+Before running the project, make sure the following tools are installed:
+
+- XAMPP
+- PHP
+- Composer
+- Node.js and npm
+- Git
+- Web browser
+
+## 1. Start XAMPP
+
+Open the **XAMPP Control Panel**.
+
+Start both services:
+
+```text
+Apache
+MySQL
 ```
 
-### 2. Install PHP Dependencies
+Make sure both of them show as running.
 
-```bash
-composer install
-```
+## 2. Create a Database in phpMyAdmin
 
-### 3. Install Frontend Dependencies
+After starting MySQL in XAMPP, click the **Admin** button on the right side of the MySQL row.
 
-```bash
-npm install
-```
+This will open phpMyAdmin in your browser.
 
-### 4. Create Environment File
+In phpMyAdmin:
 
-```bash
-cp .env.example .env
-```
-
-For Windows PowerShell, use:
-
-```bash
-copy .env.example .env
-```
-
-### 5. Generate Application Key
-
-```bash
-php artisan key:generate
-```
-
-### 6. Configure Database
-
-Create a MySQL database in phpMyAdmin or MySQL.
-
-Example database name:
+1. Click **New** on the left sidebar.
+2. Enter the database name:
 
 ```text
 myfamilyhub
 ```
 
-Then update the `.env` file:
+3. Click **Create**.
+
+The database is now ready to be used by the Laravel project.
+
+## 3. Clone the Repository
+
+Open Command Prompt, PowerShell, or Git Bash.
+
+Go to the folder where you want to store the project.
+
+Example:
+
+```bash
+cd C:\Users\YourName\Downloads
+```
+
+Clone the repository:
+
+```bash
+git clone https://github.com/majdiahmadi/myfamilyhub-family-management-system.git
+```
+
+Go into the project folder:
+
+```bash
+cd myfamilyhub-family-management-system
+```
+
+## 4. Install PHP Dependencies
+
+Run:
+
+```bash
+composer install
+```
+
+This will install the Laravel backend dependencies.
+
+## 5. Install Frontend Dependencies
+
+Run:
+
+```bash
+npm install
+```
+
+This will install the frontend dependencies required by Vite and Tailwind CSS.
+
+## 6. Create the Environment File
+
+Laravel needs a `.env` file to store local configuration.
+
+For Windows Command Prompt, run:
+
+```bash
+copy .env.example .env
+```
+
+For PowerShell, run:
+
+```bash
+Copy-Item .env.example .env
+```
+
+For Git Bash, Linux, or macOS, run:
+
+```bash
+cp .env.example .env
+```
+
+## 7. Generate the Laravel Application Key
+
+Run:
+
+```bash
+php artisan key:generate
+```
+
+You should see:
+
+```text
+Application key set successfully.
+```
+
+## 8. Configure the Database
+
+Open the `.env` file and update the database settings.
+
+For XAMPP, the default MySQL username is usually `root` and the password is usually empty.
 
 ```env
 DB_CONNECTION=mysql
@@ -171,9 +251,13 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-For XAMPP, the default username is usually `root` and the password is usually empty.
+Save the `.env` file after editing.
 
-### 7. Run Database Migration
+## 9. Run Database Migration
+
+Make sure XAMPP MySQL is still running.
+
+Then run:
 
 ```bash
 php artisan migrate
@@ -182,33 +266,127 @@ php artisan migrate
 If the project includes seeders, run:
 
 ```bash
-php artisan db:seed
-```
-
-Or run both together:
-
-```bash
 php artisan migrate --seed
 ```
 
-### 8. Start Laravel Server
+If you see:
+
+```text
+Nothing to migrate.
+```
+
+it means Laravel did not find any new migration to run.
+
+## 10. Run the Laravel Server
+
+In the first terminal, run:
 
 ```bash
 php artisan serve
 ```
 
-The project should run at:
+You should see something like:
+
+```text
+Server running on http://127.0.0.1:8000
+```
+
+Do not close this terminal.
+
+## 11. Run the Vite Development Server
+
+Open a new terminal.
+
+Go to the same project folder again:
+
+```bash
+cd C:\Users\YourName\Downloads\myfamilyhub-family-management-system
+```
+
+Then run:
+
+```bash
+npm run dev
+```
+
+Do not close this terminal either.
+
+The project needs both servers running at the same time:
+
+```text
+Terminal 1: php artisan serve
+Terminal 2: npm run dev
+```
+
+## 12. Open the Website
+
+Open your browser and go to:
 
 ```text
 http://127.0.0.1:8000
 ```
 
-### 9. Start Frontend Development Server
+The MyFamilyHub website should now be running locally.
 
-Open another terminal and run:
+## Common Issues
+
+### Vite Manifest Not Found
+
+If you see an error like:
+
+```text
+Vite manifest not found at public/build/manifest.json
+```
+
+run this in a new terminal:
 
 ```bash
 npm run dev
+```
+
+Then refresh the website.
+
+Alternatively, you can build the frontend files once by running:
+
+```bash
+npm run build
+```
+
+### Database Connection Error
+
+If the website shows a database connection error, check these:
+
+- XAMPP MySQL is running
+- The database `myfamilyhub` exists in phpMyAdmin
+- The `.env` database settings are correct
+- The MySQL username and password match your local setup
+
+### `.env` File Missing
+
+If `php artisan key:generate` fails because `.env` is missing, create it first:
+
+```bash
+copy .env.example .env
+```
+
+Then run:
+
+```bash
+php artisan key:generate
+```
+
+### Port Already in Use
+
+If Laravel says port `8000` is already in use, run:
+
+```bash
+php artisan serve --port=8001
+```
+
+Then open:
+
+```text
+http://127.0.0.1:8001
 ```
 
 ## Demo Login Accounts
